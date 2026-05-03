@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户列表 - 校园二手交易平台</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>🏪 校园二手交易平台</h1>
+            <p>让闲置物品焕发新生命</p>
+        </div>
+
+        <!-- 导航 -->
+        <div class="navbar">
+            <a href="index.html" class="nav-link">首页</a>
+            <a href="item.html" class="nav-link">商品列表</a>
+            <a href="user.html" class="nav-link active">用户列表</a>
+            <a href="order.html" class="nav-link">订单列表</a>
+        </div>
+
+        <!-- 消息提示 -->
+        <div id="message" class="message"></div>
+
+        <!-- 页面内容 -->
+        <div class="content">
+            <h2>用户列表</h2>
+            
+            <!-- 聚合查询面板 -->
+            <div class="query-panel">
+                <h3>📊 用户统计</h3>
+                <div class="query-buttons">
+                    <button class="btn btn-query" onclick="queryMostActiveUser()">🏆 发布商品最多的用户</button>
+                    <button class="btn btn-query" onclick="showAllUsers()">👥 显示所有用户</button>
+                </div>
+            </div>
+
+            <!-- 表格容器 -->
+            <div id="contentContainer" class="table-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    <script src="app.js"></script>
+    <script>
+        // 页面初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            showMessage('加载用户列表页面', 'info');
+        });
+    </script>
+</body>
+</html>

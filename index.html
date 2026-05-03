@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园二手交易平台 - 首页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>🏪 校园二手交易平台</h1>
+            <p>让闲置物品焕发新生命</p>
+        </div>
+
+        <!-- 导航 -->
+        <div class="navbar">
+            <a href="index.html" class="nav-link active">首页</a>
+            <a href="item.html" class="nav-link">商品列表</a>
+            <a href="user.html" class="nav-link">用户列表</a>
+            <a href="order.html" class="nav-link">订单列表</a>
+        </div>
+
+        <!-- 消息提示 -->
+        <div id="message" class="message"></div>
+
+        <!-- 页面内容 -->
+        <div class="content">
+            <div class="home-content">
+                <h2>欢迎来到校园二手交易平台</h2>
+                <p style="color: #666; font-size: 1.1em; margin-bottom: 30px;">
+                    发现校园内的优质二手商品，与同学们分享和交易
+                </p>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>📦 商品列表</h3>
+                        <p>浏览所有出售中的商品，查看详细信息和价格</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>👥 用户列表</h3>
+                        <p>了解卖家信息，获取联系方式</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📋 订单列表</h3>
+                        <p>查看已成交的订单和交易历史</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🔍 智能搜索</h3>
+                        <p>按分类、价格等条件快速查找商品</p>
+                    </div>
+                </div>
+
+                <div style="margin-top: 50px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+                    <h3 style="color: #333; margin-bottom: 15px;">📊 平台统计</h3>
+                    <div id="homeStats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                        <div class="stat-card">
+                            <div class="label">商品总数</div>
+                            <div class="value">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">出售中</div>
+                            <div class="value">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">已售出</div>
+                            <div class="value">-</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">平均价格</div>
+                            <div class="value">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    <script src="app.js"></script>
+    <script>
+        // 首页初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            updateHomeStats();
+            showMessage('欢迎使用校园二手交易平台！', 'info');
+        });
+    </script>
+</body>
+</html>

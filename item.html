@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品列表 - 校园二手交易平台</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>🏪 校园二手交易平台</h1>
+            <p>让闲置物品焕发新生命</p>
+        </div>
+
+        <!-- 导航 -->
+        <div class="navbar">
+            <a href="index.html" class="nav-link">首页</a>
+            <a href="item.html" class="nav-link active">商品列表</a>
+            <a href="user.html" class="nav-link">用户列表</a>
+            <a href="order.html" class="nav-link">订单列表</a>
+        </div>
+
+        <!-- 消息提示 -->
+        <div id="message" class="message"></div>
+
+        <!-- 页面内容 -->
+        <div class="content">
+            <h2>商品列表</h2>
+            
+            <!-- 基础查询面板 -->
+            <div class="query-panel">
+                <h3>📌 基础查询</h3>
+                <div class="query-buttons">
+                    <button class="btn btn-query" onclick="queryAllUnsoldItems()">📦 查询所有未售商品</button>
+                    <button class="btn btn-query" onclick="queryItemsAbovePrice()">💰 查询价格>30的商品</button>
+                    <button class="btn btn-query" onclick="queryDailyGoodsItems()">🏠 查询生活用品</button>
+                    <button class="btn btn-query" onclick="queryItemsByUser('u001')">👤 查询u001的商品</button>
+                    <button class="btn btn-query" onclick="showAllItems()">🔄 显示所有商品</button>
+                </div>
+            </div>
+
+            <!-- 聚合统计面板 -->
+            <div class="query-panel">
+                <h3>📊 聚合统计</h3>
+                <div class="query-buttons">
+                    <button class="btn btn-query" onclick="queryItemCount()">📈 商品总数</button>
+                    <button class="btn btn-query" onclick="queryItemCountByCategory()">🏷️ 分类统计</button>
+                    <button class="btn btn-query" onclick="queryAvgItemPrice()">💵 平均价格</button>
+                </div>
+            </div>
+
+            <!-- 视图面板 -->
+            <div class="query-panel">
+                <h3>👁️ 视图展示</h3>
+                <div class="query-buttons">
+                    <button class="btn btn-query" onclick="queryViewSoldItems()">✓ 已售商品视图</button>
+                    <button class="btn btn-query" onclick="queryViewUnsoldItems()">● 未售商品视图</button>
+                </div>
+            </div>
+
+            <!-- 表格容器 -->
+            <div id="contentContainer" class="table-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.39.0"></script>
+    <script src="app.js"></script>
+    <script>
+        // 页面初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            showMessage('加载商品列表页面', 'info');
+        });
+    </script>
+</body>
+</html>
